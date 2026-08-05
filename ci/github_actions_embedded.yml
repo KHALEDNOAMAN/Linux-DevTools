@@ -1,0 +1,11 @@
+name: Embedded CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Toolchain
+      run: sudo apt-get install -y gcc-arm-none-eabi
+    - name: Build
+      run: make
